@@ -34,6 +34,10 @@ class googly(QMainWindow):
         navbar.addWidget(self.url_bar)
         self.browser.urlChanged.connect(self.update_url)
 
+        search_button = QAction('Search', self)
+        search_button.triggered.connect(self.navigate_to_url)
+        navbar.addAction(search_button)
+
     def navigate_home(self):
         self.browser.setUrl(QUrl('https://www.google.com'))
 
